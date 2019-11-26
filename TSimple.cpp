@@ -25,7 +25,6 @@ void TSimple::Afficher()
   cout<<MT<<endl;
 } //----- Fin de Méthode
 
-
 //-------------------------------------------- Constructeurs - destructeur
 
 TSimple::TSimple (const char* depart,const char* arrivee, const char* moyenT):Trajet(depart,arrivee)

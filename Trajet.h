@@ -30,6 +30,8 @@ public:
     //
     // Contrat :
     //
+    const char* GetDepart();
+    const char* GetArrivee();
 //-------------------------------------------- Constructeurs - destructeur
     Trajet (const char* arrivee, const char* depart);
     // Mode d'emploi :

@@ -13,13 +13,13 @@ int main ()
   
   TSimple* b = new TSimple("Toulouse", "Lyon", "voiture");
   
-  TCompose* c = new TCompose("A","B");
+  TCompose* c = new TCompose("Orléans","B");
   c->Ajouter(a);
   c->Ajouter(b);
   //a->Afficher();
   //b->Afficher();
   //c->Afficher();
-  TCompose* d = new TCompose("A","B");
+  TCompose* d = new TCompose("Orléans","B");
   d->Ajouter(c);
   d->Ajouter(a);
   d->Afficher();

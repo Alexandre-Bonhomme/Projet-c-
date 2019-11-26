@@ -13,6 +13,7 @@
 //-------------------------------------------------------- Include système
 using namespace std;
 #include <iostream>
+#include <string.h>
 
 //------------------------------------------------------ Include personnel
 
@@ -28,19 +29,28 @@ using namespace std;
 
 void TCompose::Ajouter(TSimple* ts) //ajouter un trajet simple
 {
-  liste[nbTrajet] = ts;
-  nbTrajet ++;
-  
+  if(strcmp(ts->GetDepart(),posActuelle) == 0){
+    liste[nbTrajet] = ts;
+    nbTrajet ++;
+    posActuelle =(char*) ts->GetArrivee();
+  }else{
+    cout <<"Ajout invalide" << endl;
+  }
 }
 
 void TCompose::Ajouter(TCompose* tc) // ajouter une liste de trajet de simple
 {
-  int nbTS = tc->GetNbTrajet();
-  TSimple ** ListeTS = tc->GetListe();
-  for(int i=0;i<nbTS;i++){
-    liste[nbTrajet+i] = ListeTS[i];
+  if(strcmp(tc->GetDepart(),posActuelle) == 0){
+    int nbTS = tc->GetNbTrajet();
+    TSimple ** ListeTS = tc->GetListe();
+    for(int i=0;i<nbTS;i++){
+      liste[nbTrajet+i] = ListeTS[i];
+    }
+    nbTrajet = nbTrajet + nbTS;
+    posActuelle =(char*) tc->GetArrivee();
+  }else{
+    cout <<"Ajout invalide" << endl;
   }
-  nbTrajet = nbTrajet + nbTS;
 } 
 
 void TCompose::Afficher() //affichage
@@ -67,6 +77,8 @@ TCompose::TCompose (const char* depart,const char* arrivee):Trajet(depart,arrive
 {
   nbTrajet = 0;
   liste = new TSimple* [10];
+  posActuelle = (char*) depart;
+  
 #ifdef MAP
     cout << "Appel au constructeur de <TCompose>" << endl;
 #endif

@@ -25,24 +25,17 @@ void Trajet::Afficher()
 
 //----- Fin de Méthode
 
+const char* Trajet::GetDepart()
+{
+  return depart;
+}
 
-//------------------------------------------------- Surcharge d'opérateurs
-//Xxx & Xxx::operator = ( const Xxx & unXxx )
-// Algorithme :
-//
-// {
-// } //----- Fin de operator =
-
+const char* Trajet::GetArrivee()
+{
+  return arrivee;
+}
 
 //-------------------------------------------- Constructeurs - destructeur
-
-/*Xxx::Xxx ( const Xxx & unXxx ) ----Trajet (constructeur de copie)
-{
-#ifdef MAP
-    cout << "Appel au constructeur de copie de <Xxx>" << endl;
-#endif
-} //----- Fin de Trajet (constructeur de copie)
-*/
 
 Trajet::Trajet (const char* dep, const char* arr) {
   arrivee=arr;

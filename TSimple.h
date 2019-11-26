@@ -34,6 +34,7 @@ public:
     // Contrat :
     //
     virtual void Afficher();
+    
 
 //-------------------------------------------- Constructeurs - destructeur
     

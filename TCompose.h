@@ -61,6 +61,7 @@ protected:
 //----------------------------------------------------- Attributs protégés
 TSimple** liste;
 int nbTrajet;
+char * posActuelle;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Tcompose>
