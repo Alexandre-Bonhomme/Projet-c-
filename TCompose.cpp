@@ -22,18 +22,21 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void TCompose::ajouter(TSimple* ts)
+void TCompose::ajouter(TSimple ts) //ajouter un trajet simple
 {
   
-} //----- Fin de Méthode
+} 
+void TCompose::ajouter(TSimple* liste_ts) // ajouter une liste de trajet de simple
+{
+  
+} 
+//----- Fin de Méthode
 
 
 //-------------------------------------------- Constructeurs - destructeur
 
-TCompose::TCompose (TSimple* trajet)
+TCompose::TCompose ()
 {
-  ts=trajet;
-  next=NULL
   
 #ifdef MAP
     cout << "Appel au constructeur de <TCompose>" << endl;
