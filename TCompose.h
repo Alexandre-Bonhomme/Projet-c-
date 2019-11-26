@@ -34,7 +34,11 @@ public:
     //
     // Contrat :
     //
-
+    
+    void Ajouter(TSimple* ts);    //Ajouter un trajet simple
+    void Ajouter(TSimple** ts);   //Ajoute une liste de trajets simples
+    void Afficher();
+    
     TCompose (const char* depart,const char* arrivee);
     // Mode d'emploi :
     //
@@ -51,10 +55,10 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-void ajouter(TSimple* ts);    //Ajouter un trajet simple
-void ajouter(TSimple** ts);   //Ajoute une liste de trajets simples
+
 //----------------------------------------------------- Attributs protégés
 TSimple** liste;
+int nbTrajet;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Tcompose>

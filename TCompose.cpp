@@ -26,21 +26,32 @@ using namespace std;
 
 //----------------------------------------------------- Méthodes publiques
 
-void TCompose::ajouter(TSimple* ts) //ajouter un trajet simple
+void TCompose::Ajouter(TSimple* ts) //ajouter un trajet simple
+{
+  liste[nbTrajet] = ts;
+  nbTrajet ++;
+  
+}
+
+void TCompose::Ajouter(TSimple** liste_ts) // ajouter une liste de trajet de simple
 {
   
 } 
-void TCompose::ajouter(TSimple** liste_ts) // ajouter une liste de trajet de simple
+
+void TCompose::Afficher() //affichage
 {
-  
-} 
-//----- Fin de Méthode
+  for(int i=0;i<nbTrajet;i++){
+    liste[i]->Afficher();
+  }
+}
+
 
 //-------------------------------------------- Constructeurs - destructeur
 
 TCompose::TCompose (const char* depart,const char* arrivee):Trajet(depart,arrivee)
 {
-  
+  nbTrajet = 0;
+  liste = new TSimple* [10];
 #ifdef MAP
     cout << "Appel au constructeur de <TCompose>" << endl;
 #endif

@@ -44,7 +44,7 @@ void Trajet::Afficher()
 } //----- Fin de Trajet (constructeur de copie)
 */
 
-Trajet::Trajet (const char* arr, const char* dep) {
+Trajet::Trajet (const char* dep, const char* arr) {
   arrivee=arr;
   depart=dep;
 
