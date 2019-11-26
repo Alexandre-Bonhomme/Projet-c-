@@ -7,8 +7,8 @@
 *************************************************************************/
 
 //---------- Interface de la classe <TCompose> (fichier TCompose.h) ----------------
-#if ! defined ( XXX_H )
-#define XXX_H
+#if ! defined ( TCOMPOSE_H )
+#define TCOMPOSE_H
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -34,13 +34,13 @@ public:
     // Contrat :
     //
 
-    TCompose (TSimple* trajet);
+    TCompose ();
     // Mode d'emploi :
     //
     // Contrat :
     //
 
-    virtual ~TCompose ( );
+    virtual ~TCompose ();
     // Mode d'emploi :
     //
     // Contrat :
@@ -50,13 +50,13 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-void ajouter(TSimple ts);
+void ajouter(TSimple ts);    //Ajouter un trajet simple
+void ajouter(TSimple* ts);   //Ajoute une liste de trajets simples
 //----------------------------------------------------- Attributs protégés
-TSimple* ts;
-TCompose* next;
+TSimple liste [10];
 };
 
-//-------------------------------- Autres définitions dépendantes de <Xxx>
+//-------------------------------- Autres définitions dépendantes de <Tcompose>
 
-#endif // XXX_H
+#endif // TCOMPOSEE_H
 
