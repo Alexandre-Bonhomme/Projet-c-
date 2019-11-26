@@ -9,6 +9,7 @@
 //---------- Interface de la classe <TCompose> (fichier TCompose.h) ----------------
 #if ! defined ( TCOMPOSE_H )
 #define TCOMPOSE_H
+#include "Trajet.h"
 
 //--------------------------------------------------- Interfaces utilisées
 
@@ -21,7 +22,7 @@
 //
 //
 //------------------------------------------------------------------------
-
+class TSimple; //pour dire au compilateur qu'il existe une classe TSimple (car on utilise des objets TSimple de les méthodes)
 class TCompose : public Trajet
 {
 //----------------------------------------------------------------- PUBLIC
@@ -34,7 +35,7 @@ public:
     // Contrat :
     //
 
-    TCompose ();
+    TCompose (const char* depart,const char* arrivee);
     // Mode d'emploi :
     //
     // Contrat :
@@ -50,10 +51,10 @@ public:
 
 protected:
 //----------------------------------------------------- Méthodes protégées
-void ajouter(TSimple ts);    //Ajouter un trajet simple
-void ajouter(TSimple* ts);   //Ajoute une liste de trajets simples
+void ajouter(TSimple* ts);    //Ajouter un trajet simple
+void ajouter(TSimple** ts);   //Ajoute une liste de trajets simples
 //----------------------------------------------------- Attributs protégés
-TSimple liste [10];
+TSimple** liste;
 };
 
 //-------------------------------- Autres définitions dépendantes de <Tcompose>

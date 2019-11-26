@@ -15,6 +15,9 @@ using namespace std;
 #include <iostream>
 
 //------------------------------------------------------ Include personnel
+
+#include "Trajet.h"
+#include "TSimple.h"
 #include "TCompose.h"
 
 //------------------------------------------------------------- Constantes
@@ -22,20 +25,20 @@ using namespace std;
 //----------------------------------------------------------------- PUBLIC
 
 //----------------------------------------------------- Méthodes publiques
-void TCompose::ajouter(TSimple ts) //ajouter un trajet simple
+
+void TCompose::ajouter(TSimple* ts) //ajouter un trajet simple
 {
   
 } 
-void TCompose::ajouter(TSimple* liste_ts) // ajouter une liste de trajet de simple
+void TCompose::ajouter(TSimple** liste_ts) // ajouter une liste de trajet de simple
 {
   
 } 
 //----- Fin de Méthode
 
-
 //-------------------------------------------- Constructeurs - destructeur
 
-TCompose::TCompose ()
+TCompose::TCompose (const char* depart,const char* arrivee):Trajet(depart,arrivee)
 {
   
 #ifdef MAP

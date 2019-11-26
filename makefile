@@ -10,6 +10,9 @@ PROGS = exe
 
 ll: $(PROGS)	
 
+TCompose.o: TCompose.cpp
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 Trajet.o: Trajet.cpp 
 	$(CC) $(CFLAGS) -c -o $@ $<
 
@@ -19,7 +22,7 @@ TSimple.o: TSimple.cpp
 main.o: main.cpp 
 	$(CC) $(CFLAGS) -c -o $@ $<	
 
-exe: main.o Trajet.o TSimple.o
+exe: main.o Trajet.o TSimple.o TCompose.o
 	$(CC) -o $@ $^ $(LIBS)
 clean:
 	rm -f $(PROGS) *.o
