@@ -16,9 +16,13 @@ int main ()
   TCompose* c = new TCompose("A","B");
   c->Ajouter(a);
   c->Ajouter(b);
-  a->Afficher();
-  b->Afficher();
-  c->Afficher();
+  //a->Afficher();
+  //b->Afficher();
+  //c->Afficher();
+  TCompose* d = new TCompose("A","B");
+  d->Ajouter(c);
+  d->Ajouter(a);
+  d->Afficher();
   
   
   delete c;

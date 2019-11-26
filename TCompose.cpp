@@ -33,9 +33,14 @@ void TCompose::Ajouter(TSimple* ts) //ajouter un trajet simple
   
 }
 
-void TCompose::Ajouter(TSimple** liste_ts) // ajouter une liste de trajet de simple
+void TCompose::Ajouter(TCompose* tc) // ajouter une liste de trajet de simple
 {
-  
+  int nbTS = tc->GetNbTrajet();
+  TSimple ** ListeTS = tc->GetListe();
+  for(int i=0;i<nbTS;i++){
+    liste[nbTrajet+i] = ListeTS[i];
+  }
+  nbTrajet = nbTrajet + nbTS;
 } 
 
 void TCompose::Afficher() //affichage
@@ -43,6 +48,16 @@ void TCompose::Afficher() //affichage
   for(int i=0;i<nbTrajet;i++){
     liste[i]->Afficher();
   }
+}
+
+TSimple** TCompose::GetListe() 
+{
+  return liste;
+}
+
+int TCompose::GetNbTrajet() 
+{
+  return nbTrajet;
 }
 
 

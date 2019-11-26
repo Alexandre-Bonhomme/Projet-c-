@@ -36,8 +36,10 @@ public:
     //
     
     void Ajouter(TSimple* ts);    //Ajouter un trajet simple
-    void Ajouter(TSimple** ts);   //Ajoute une liste de trajets simples
+    void Ajouter(TCompose* tc);   //Ajoute une liste de trajets simples
     void Afficher();
+    int GetNbTrajet();
+    TSimple** GetListe();
     
     TCompose (const char* depart,const char* arrivee);
     // Mode d'emploi :
