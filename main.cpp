@@ -11,6 +11,10 @@ int main ()
   TSimple* a = new TSimple("Orléans", "Toulouse", "trotinnette");
   a->Afficher();
   
+  TCompose* c = new TSimple();
+  
+  
+  delete c;
   delete a;
   delete t;
   
